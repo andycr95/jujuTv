@@ -1,0 +1,37 @@
+<section>
+    <div *ngIf="show" class="modal-filter--mobile">
+        <div class="modal-filter--mobile_content">
+            <div class="header-modal">
+                <h2 class="title-modal">Filtros</h2>
+                <div (click)="show = !show">
+                    <img src="/assets/img/closeIcon.svg" alt="closeIcon"/>
+                </div>
+            </div>
+            <app-select-mobile label="Especie" (open)="getFilter($event)" [options]=species [mobile]=true ></app-select-mobile>
+            <app-select-mobile label="Genero" (open)="getFilter($event)" [options]=genders [mobile]=true ></app-select-mobile>
+            <app-select-mobile label="Estado" (open)="getFilter($event)" [options]=status  [mobile]=true></app-select-mobile>
+            <div (click)="setFilter()" class="button-filter--mobile">
+                <div><h3>APLICAR</h3></div>
+            </div>
+            <div class="button-filter--mobile-cancel" (click)="show = !show">
+                <div><h3>CANCELAR</h3></div>
+            </div>
+        </div>
+    </div>
+    <div class="input-filter">
+        <input [(ngModel)]="name" (keyup)="setFilterName()" type="text">
+        <div *ngIf="name == ''">
+            <img src="/assets/img/searchIcon.svg" alt="searchIcon"/>
+        </div>
+        <span *ngIf="name == ''">Filtrar por nombre</span>
+    </div>
+    <div class="advance-filter-mobile" (click)="show = !show">
+        <img src="/assets/img/filterIcon.svg" alt="filterIcon" />
+        <div>
+            <h3>FILTROS AVANZADOS</h3>
+        </div>
+    </div>
+    <app-select-mobile (open)="getFilter($event, true)" label="Especie" [mobile]=false [options]=species></app-select-mobile>
+    <app-select-mobile (open)="getFilter($event, true)" label="Genero" [mobile]=false [options]=genders></app-select-mobile>
+    <app-select-mobile (open)="getFilter($event, true)" label="Estado" [mobile]=false [options]=status></app-select-mobile>
+</section>

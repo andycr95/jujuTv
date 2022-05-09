@@ -1,0 +1,60 @@
+<div class="app">
+    <div class="content-loader" *ngIf="loading">
+        <div class="loader"></div>
+    </div>
+    <header [ngClass]="{'class': true}">
+        <nav>
+            <a [routerLink]="[ '/']"><img src="/assets/img/logo-nav.jpeg" class="logo" alt="logo"></a>
+        </nav>
+        <img [src]="character?.image" class="image" alt="image">
+        <h1>{{character?.name}}</h1>
+    </header>
+    <section>
+        <div>
+            <h4 class="title">Informacion</h4>
+            <div class="items">
+                <div class="item">
+                    <h4>Genero:</h4>
+                    <span>{{character?.gender}}</span>
+                </div>
+                <div class="item">
+                    <h4>Estado:</h4>
+                    <span>{{character?.status === 'Alive' ? 'Vivo' : 'Muerto'}}</span>
+                </div>
+                <div class="item">
+                    <h4>Especie:</h4>
+                    <span>{{character?.species}}</span>
+                </div>
+                <div class="item">
+                    <h4>Origen:</h4>
+                    <span>{{character?.origin?.name}}</span>
+                </div>
+                <div class="item">
+                    <h4>Tipo:</h4>
+                    <span>{{character?.type}}</span>
+                </div>
+                <div class="item">
+                    <h4>Origen:</h4>
+                    <span>{{character?.location?.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4 class="title">Episodios</h4>
+            <div class="items">
+                <app-episode *ngFor="let item of character?.episode" [item]=item></app-episode>
+            </div>
+        </div>
+    </section>
+    <footer class="footer__Wrapper-vp91ct-1 CZpTZ">
+        <ul>
+            <li>
+                <div>
+                    <span>
+                        Rick and Morty by Andy Caicedo
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </footer>
+</div>

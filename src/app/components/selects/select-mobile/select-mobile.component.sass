@@ -1,0 +1,55 @@
+
+
+
+.select-mobile
+    margin-left: 16px
+    height: 56px
+    width: 90%
+    border: 1px solid rgba(0, 0, 0, 0.38)
+    box-sizing: border-box
+    border-radius: 8px
+    margin-top: 16px
+    display: flex
+    align-items: center
+    flex-direction: row
+    padding: 0 14px
+    align-content: space-between
+
+    div
+        width: 80%
+        display: flex
+        justify-content: end
+
+.options
+    width: 81%
+    margin-left: 16px
+    max-height: 70px
+    overflow-y: overlay
+    border-top: 0
+    border-left: 1px solid rgba(0,0,0,0.38)
+    border-right: 1px solid rgba(0,0,0,0.38)
+    border-bottom: 1px solid rgba(0,0,0,0.38)
+    display: block
+    position: absolute
+    background-color: #ffffff
+
+    @media (min-width: 768px) 
+        width: 20%
+        max-height: 80px
+        position: absolute
+        margin-left: 0px
+
+    div
+        height: 30px
+        display: flex
+        flex-direction: column
+        
+.no-mobile
+    width: 20vw
+    @media (max-width: 768px) 
+        display: none
+    
+    .options
+        width: 18vw
+        max-height: 80px
+        margin-left: 15px

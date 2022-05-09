@@ -1,0 +1,26 @@
+<div class="app">
+    <header [ngClass]="{'class': true}">
+        <nav>
+            <img src="/assets/img/logo-nav.jpeg" alt="" srcset="">
+        </nav>
+        <img src="/assets/img/logo.svg" alt="" srcset="">
+    </header>
+    <section>
+        <app-modal *ngIf="show" [location]="location" (show)="show = !show"></app-modal>
+        <app-card-list (getLocation)="getLocation($event)" [loading]="loading" [items]=characters></app-card-list>
+        <div *ngIf="pages !== page" (click)="getMore()"  class="button-page">
+            <div><h3>Cargar mas</h3></div>
+        </div>
+    </section>
+    <footer class="footer__Wrapper-vp91ct-1 CZpTZ">
+        <ul>
+            <li>
+                <div>
+                    <span>
+                        Rick and Morty by Andy Caicedo
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </footer>
+</div>

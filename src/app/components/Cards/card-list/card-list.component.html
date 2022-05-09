@@ -1,0 +1,6 @@
+<section>
+    <div class="content-loader" *ngIf="loading">
+        <div class="loader"></div>
+    </div>
+    <app-cards-item (getLocation)="getLocation.emit($event)" *ngFor="let item of items" [item]=item></app-cards-item>
+</section>

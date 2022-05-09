@@ -1,0 +1,15 @@
+<div class="card">
+    <img (click)="goToDetail()" [src]=item.image [alt]=item.name/>
+    <div class="card-content">
+        <div>
+            <h2>{{item.name}}</h2>
+            <div [ngClass]="{'alive': item.status === 'Alive', 'dead': item.status === 'Dead', 'unknow': item.status === 'unknown'}"></div>
+        </div>
+        <label>Especie</label>
+        <span>{{item.species}}</span>
+        <label>Ultima locacion</label>
+        <a (click)="location(item.location.url)">{{item.location.name}}</a>
+        <label>Primer episodio</label>
+        <span>{{episode}}</span>
+    </div>
+</div>

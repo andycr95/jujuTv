@@ -1,0 +1,26 @@
+<div *ngIf="mobile">
+    <div class="select-mobile" (click)="show = !show">
+        <span>{{label}}</span>
+        <div>
+            <img src="/assets/img/selectIcon.svg" alt='selectIcon' />
+        </div>
+    </div>
+    <div class="options" *ngIf="show">
+        <div *ngFor="let item of options" (click)="selectOpt(item)">
+            <span>{{item.name}}</span>
+        </div>
+    </div>
+</div>
+<div *ngIf="!mobile" class="no-mobile">
+    <div class="select-mobile" (click)="show = !show">
+        <span>{{label}}</span>
+        <div>
+            <img src="/assets/img/selectIcon.svg" alt='selectIcon' />
+        </div>
+    </div>
+    <div class="options" *ngIf="show">
+        <div *ngFor="let item of options" (click)="selectOpt(item)">
+            <span>{{item.name}}</span>
+        </div>
+    </div>
+</div>

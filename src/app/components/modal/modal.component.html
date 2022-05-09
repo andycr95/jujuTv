@@ -1,0 +1,26 @@
+<div class="modal">
+    <div class="modal-content">
+        <div class="header-modal">
+            <h2 class="title-modal">{{location.name}}</h2>
+            <div (click)="setShow()">
+                <img src="/assets/img/closeIcon.svg" alt="closeIcon"/>
+            </div>
+        </div>
+        <div class="items">
+            <div class="item">
+                <h4>Dimension:</h4>
+                <span>{{location.dimension}}</span>
+            </div>
+            <div class="item">
+                <h4>Tipo:</h4>
+                <span>{{location.type}}</span>
+            </div>
+        </div>
+        <div class="residents">
+            <h2>Residentes</h2>
+            <div>
+                <app-avatar *ngFor="let item of location.residents" [item]="item"></app-avatar>
+            </div>
+        </div>
+    </div>
+</div>
